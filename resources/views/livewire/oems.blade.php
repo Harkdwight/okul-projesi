@@ -2,10 +2,10 @@
     <div class="oem-header card-header">
         <div>
             <label for="brand">Marka:</label>
-            <select id="oem-brand-selector" name="brand">
-                <option>-none-</option>
+            <select id="oem-brand-selector" name="brand" wire:change="updateData" wire:model="brandFilter">
+                <option value="{{null}}">-none-</option>
                 @foreach($brands as $brand)
-                    <option>{{$brand}}</option>
+                    <option value="{{$brand->id}}">{{$brand->name}}</option>
                 @endforeach
             </select>
             <span style="float: right">
