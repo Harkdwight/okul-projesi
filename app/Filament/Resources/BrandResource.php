@@ -33,6 +33,7 @@ class BrandResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('id'),
+                Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\ImageColumn::make('logo')
             ])
             ->filters([

@@ -1,0 +1,25 @@
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.cart-part {
+    display: flex;
+    flex-direction: column;
+}
+
+.part-icon {
+    width: 60px;
+}
+
+.selected-part {
+    filter: opacity(30%);
+}
+
+.oem-image {
+    width: 95px;
+}
+
+.oem-card-part {
+    max-width: 150px;
+}
