@@ -19,6 +19,9 @@ class PsuResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $navigationGroup = "Parts";
+    
+
     public static function form(Form $form): Form
     {
         return $form
