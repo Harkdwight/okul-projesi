@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ProcessorResource\Pages;
-use App\Filament\Resources\ProcessorResource\RelationManagers;
-use App\Models\Processor;
+use App\Filament\Resources\MotherboardResource\Pages;
+use App\Filament\Resources\MotherboardResource\RelationManagers;
+use App\Models\GraphicCard;
+use App\Models\Motherboard;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,9 +14,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ProcessorResource extends Resource
+class GraphicCardResource extends Resource
 {
-    protected static ?string $model = Processor::class;
+    protected static ?string $model = GraphicCard::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -44,7 +45,7 @@ class ProcessorResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('img')
+                Tables\Columns\ImageColumn::make('img')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('price')
                     ->money()
@@ -65,6 +66,7 @@ class ProcessorResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -84,9 +86,10 @@ class ProcessorResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListProcessors::route('/'),
-            'create' => Pages\CreateProcessor::route('/create'),
-            'edit' => Pages\EditProcessor::route('/{record}/edit'),
+            'index' => Pages\ListGraphicCards::route('/'),
+            'create' => Pages\CreateGraphicCard::route('/create'),
+            'view' => Pages\ViewGraphicCard::route('/{record}'),
+            'edit' => Pages\EditGraphicCard::route('/{record}/edit'),
         ];
     }
 }

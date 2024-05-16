@@ -16,16 +16,8 @@ return new class extends Migration {
             $table->string('img')->nullable();
             $table->integer('brand_id');
             $table->integer('price');
-            $table->integer('stock');
             $table->softDeletes();
             $table->timestamps();
-
-            //ozelliker
-            $table->string('watt')->nullable();
-            $table->string('certificate')->nullable();
-            $table->boolean('size')->nullable();
-            $table->string('socket')->nullable();
-            $table->string('chipset')->nullable();
         });
     }
 

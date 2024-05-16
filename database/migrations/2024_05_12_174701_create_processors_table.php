@@ -18,11 +18,6 @@ return new class extends Migration {
             $table->integer('price');
             $table->softDeletes();
             $table->timestamps();
-
-            //ozelliker
-            $table->string('ghz')->nullable();
-            $table->string('socket')->nullable();
-            $table->string('nm')->nullable();
         });
     }
 

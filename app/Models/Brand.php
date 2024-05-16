@@ -10,11 +10,4 @@ class Brand extends Model
     protected $fillable = [
         'name', 'logo'
     ];
-
-    public function oems(): HasMany
-    {
-        return $this->hasMany(Oem::class);
-    }
-
-
 }

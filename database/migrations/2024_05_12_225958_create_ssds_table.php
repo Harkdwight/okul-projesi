@@ -16,7 +16,6 @@ return new class extends Migration {
             $table->string('img')->nullable();
             $table->integer('brand_id');
             $table->integer('price');
-            $table->integer('stock');
             $table->softDeletes();
             $table->timestamps();
         });
