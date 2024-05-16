@@ -20,7 +20,7 @@ class ProcessorResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     protected static ?string $navigationGroup = "Parts";
-    
+
 
     public static function form(Form $form): Form
     {
@@ -47,7 +47,7 @@ class ProcessorResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('img')
+                Tables\Columns\ImageColumn::make('img')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('price')
                     ->money()

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\MotherboardResource\Pages;
+namespace App\Filament\Resources\GraphicCardResource\Pages;
 
 use App\Filament\Resources\GraphicCardResource;
 use Filament\Actions;

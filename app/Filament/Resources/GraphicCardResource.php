@@ -2,10 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\MotherboardResource\Pages;
-use App\Filament\Resources\MotherboardResource\RelationManagers;
+use App\Filament\Resources\GraphicCardResource\Pages;
+use App\Filament\Resources\GraphicCardResource\RelationManagers;
 use App\Models\GraphicCard;
-use App\Models\Motherboard;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
