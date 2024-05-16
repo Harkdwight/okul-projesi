@@ -10,13 +10,11 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('motherboards', function (Blueprint $table) {
+        Schema::create('user_baskets', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('img')->nullable();
-            $table->integer('brand_id');
-            $table->integer('price');
-            $table->softDeletes();
+            $table->integer('user_id');
+            $table->string('model');
+            $table->integer('oem_id');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('motherboards');
+        Schema::dropIfExists('user_baskets');
     }
 };

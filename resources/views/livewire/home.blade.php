@@ -1,11 +1,10 @@
-<div class="container">
+<div class="">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                {{$this->model ?? 'model'}}
                 <div class="card-header">{{ __('Toplama sihirbaz') }}</div>
-                <div class="row">
-                    <div class="col-9">
+                <div class="row p-2">
+                    <div class="col-md">
                         <livewire:part-selector/>
                         <livewire:oems/>
                     </div>

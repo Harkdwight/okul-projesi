@@ -10,14 +10,20 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('motherboards', function (Blueprint $table) {
+        Schema::create('graphic_cards', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('img')->nullable();
             $table->integer('brand_id');
             $table->integer('price');
+            $table->integer('stock');
             $table->softDeletes();
             $table->timestamps();
+
+            //ozelliker
+            $table->string('ddr')->nullable();
+            $table->string('vram')->nullable();
+            $table->boolean('bit')->nullable();
         });
     }
 
@@ -26,6 +32,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('motherboards');
+        Schema::dropIfExists('graphic_cards');
     }
 };

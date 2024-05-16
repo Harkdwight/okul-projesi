@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
 
 //Route::get('/', '')
 
@@ -23,4 +20,4 @@ Auth::routes();
 
 Route::get('/counter', \App\Livewire\Counter::class);
 
-Route::get('/home', \App\Livewire\HomeController::class)->name('home')->middleware('auth:sanctum');
+Route::get('/', \App\Livewire\HomeController::class)->name('home')->middleware('auth:sanctum');

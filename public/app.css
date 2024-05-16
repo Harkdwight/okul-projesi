@@ -9,7 +9,7 @@ p {
 }
 
 .part-icon {
-    width: 60px;
+    width: 70px;
 }
 
 .selected-part {
@@ -22,4 +22,8 @@ p {
 
 .oem-card-part {
     max-width: 150px;
+}
+
+.oem-card-part-selected {
+    filter: opacity(30%);
 }

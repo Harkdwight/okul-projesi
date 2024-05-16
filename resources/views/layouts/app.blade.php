@@ -34,11 +34,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav me-auto">
-                    <a class="nav-link text-left" href="{{ route('welcome') }}">{{ __('Ana Sayfa') }}</a>
+                    <a class="nav-link text-left" href="{{ route('home') }}">{{ __('Ana Sayfa') }}</a>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">
+                    @if(auth()->user()?->isAdmin())
+                        <a class="nav-link text-right" href="/admin">{{ __('Admin Dashboard') }}</a>
+
+                    @endif
                     <!-- Authentication Links -->
                     @guest
                         @if (Route::has('login'))

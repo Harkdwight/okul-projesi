@@ -35,8 +35,6 @@ class MotherboardResource extends Resource
                 Forms\Components\Select::make('brand_id')
                     ->relationship('brand', 'name')
                     ->required(),
-                Forms\Components\TextInput::make('stock')
-                    ->numeric(),
             ]);
     }
 
@@ -46,15 +44,12 @@ class MotherboardResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('img')
+                Tables\Columns\ImageColumn::make('img')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('price')
                     ->money()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('brand.name')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('stock')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')

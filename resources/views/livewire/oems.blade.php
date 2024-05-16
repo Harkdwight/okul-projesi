@@ -16,9 +16,10 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="grid row gap-2">
+        <div class="grid row gap-2 justify-content-md-center">
             @foreach($modelParts as $part)
-                <div class="oem-card-part card">
+                <div wire:click="selectItem({{$part}})"
+                     class="oem-card-part card {{$this->selected === $part['id'] ? 'oem-card-part-selected': ""}}">
                     <center>
                         <img class="oem-image card-img img-fluid" src="{{asset($part['img'])}}" alt="mo">
                         <h6>{{$part['name']}}</h6>

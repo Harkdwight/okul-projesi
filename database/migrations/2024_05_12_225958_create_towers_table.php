@@ -10,12 +10,13 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('motherboards', function (Blueprint $table) {
+        Schema::create('towers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('img')->nullable();
             $table->integer('brand_id');
             $table->integer('price');
+            $table->integer('stock');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -26,6 +27,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('motherboards');
+        Schema::dropIfExists('towers');
     }
 };

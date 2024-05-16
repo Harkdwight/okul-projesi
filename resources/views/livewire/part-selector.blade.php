@@ -1,4 +1,4 @@
-<div class="row mt-4">
+<div class="row mt-4 justify-content-md-center">
     @foreach($parts as $part)
         <input type="image" class="part-icon {{$part['selected'] ? 'selected-part' : ''}}"
                src="{{asset($part['icon'])}}"
