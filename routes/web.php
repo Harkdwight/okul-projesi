@@ -18,6 +18,4 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/counter', \App\Livewire\Counter::class);
-
 Route::get('/', \App\Livewire\HomeController::class)->name('home')->middleware('auth:sanctum');
