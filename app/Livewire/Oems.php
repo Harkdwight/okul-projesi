@@ -30,7 +30,7 @@ class Oems extends Component
         $this->brandFilter = null;
         $this->brands = $this->changeBrands();
         $this->modelParts = $this->updateData();
-        $this->maxPage = 0;
+        $this->maxPage = $this->getMaxPage();
         $this->selected = $this->setSelected();
     }
 
@@ -47,8 +47,20 @@ class Oems extends Component
 
     public function changePage($next = true)
     {
-        $next ? $this->currentPage++ : $this->currentPage--;
-        $this->updateData();
+        if ($next) {
+            $_page = $this->currentPage + 1;
+        } else {
+            $_page = $this->currentPage - 1;
+        }
+
+        if ($next && $_page > $this->maxPage) {
+            return;
+        } else if (!$next && $_page < 1) {
+            return;
+        } else {
+            $this->currentPage = $_page;
+            $this->updateData();
+        }
     }
 
     public function changeBrands()
@@ -66,6 +78,11 @@ class Oems extends Component
         $this->maxPage = $page->lastPage();
         $this->modelParts = $page->items();
         return $page->items();
+    }
+
+    public function getMaxPage()
+    {
+        return $this->dataQuery()->paginate('10', ['*'], 'page', $this->currentPage)->lastPage();
     }
 
     public function dataQuery()
